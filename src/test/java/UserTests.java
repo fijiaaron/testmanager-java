@@ -1,6 +1,5 @@
 import com.example.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import org.json.JSONException;
@@ -8,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -18,11 +15,11 @@ import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class User_Tests
+public class UserTests
 {
 	String name = "Aaron";
 	String email = "aaron@example.com";
-	Set<User.Role> roles = new HashSet<User.Role>(Arrays.asList(User.Role.USER, User.Role.ADMIN));
+	Set<User.Role> roles = new HashSet<>(Arrays.asList(User.Role.USER, User.Role.ADMIN));
 	LocalDate dateCreated = LocalDate.now();
 
 	@Test
